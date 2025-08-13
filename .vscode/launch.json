@@ -1,5 +1,5 @@
 {
-	"version": "0.2.0",
+  "version": "0.2.0",
 	"configurations": [
 		{
 			"name": "Debug U-Boot (QEMU ARM64)",
@@ -28,7 +28,8 @@
 				{
 					"text": "set breakpoint pending on"
 				}
-			]
+			],
+			"postDebugTask": "Stop QEMU"
 		}
 	]
 }

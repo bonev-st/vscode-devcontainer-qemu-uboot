@@ -83,6 +83,7 @@ Use `Ctrl+Shift+P → Tasks: Run Task` for:
 - **Run QEMU (U-Boot)** → `bash scripts/run_qemu_uboot.sh`
 - **Run QEMU (wait for GDB)** *(background, started by the debugger)* → `bash scripts/run_qemu_uboot.sh -gdb`
 - **Run U-Boot (Sandbox)** → `bash scripts/run_sanbox_uboot.sh` *(ensure the script exists; note the file name spelling)*
+- **Run Stop QEMU** → `bash stop_qemu.sh`
 
 ## Notes
 - The environment is deliberately **not** auto-sourced; run `source scripts/env.sh` when you need it for manual CLI builds.

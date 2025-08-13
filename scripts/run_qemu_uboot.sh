@@ -16,7 +16,16 @@ if [ ! -f "$UBOOT_BUILD/u-boot.bin" ]; then
   exit 1
 fi
 
-"$ROOT/qemu-$QEMU_VER/build/qemu-system-aarch64" \
-  -M virt -cpu cortex-a35 -m 2G \
-  -bios "$UBOOT_BUILD/u-boot.bin" \
-  -nographic $GDB_OPTS
+QEMU_BIN="$ROOT/qemu-$QEMU_VER/build/qemu-system-aarch64"
+ARGS=( -M virt -cpu cortex-a35 -m 2G -bios "$UBOOT_BUILD/u-boot.bin" -nographic )
+# Append GDB opts if any
+if [[ -n "$GDB_OPTS" ]]; then
+  # shellcheck disable=SC2206
+  ARGS=( "${ARGS[@]}" $GDB_OPTS )
+fi
+
+# Start QEMU, capture PID, and wait on it so the task stays attached
+"$QEMU_BIN" "${ARGS[@]}" &
+QEMU_PID=$!
+echo "$QEMU_PID" > /tmp/qemu-uboot.pid
+wait "$QEMU_PID"

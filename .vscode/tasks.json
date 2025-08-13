@@ -49,6 +49,12 @@
 			"type": "shell",
 			"command": "bash scripts/run_sanbox_uboot.sh",
 			"problemMatcher": []
+		},
+		{
+			"label": "Stop QEMU",
+			"type": "shell",
+			"command": "bash scripts/stop_qemu.sh",
+			"problemMatcher": []
 		}
 	]
 }
