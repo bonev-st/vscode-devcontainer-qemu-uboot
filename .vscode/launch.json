@@ -1,0 +1,34 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Debug U-Boot (QEMU ARM64)",
+			"type": "cppdbg",
+			"request": "launch",
+			"MIMode": "gdb",
+			"environment": [
+				{
+					"name": "PYTHONHOME",
+					"value": "/usr"
+				}
+			],
+			"miDebuggerPath": "gdb-multiarch",
+			//   "miDebuggerPath": "${workspaceFolder}/gcc-linaro-aarch64/bin/aarch64-none-linux-gnu-gdb",
+			//   "miDebuggerPath": "${workspaceFolder}/scripts/gdb-aarch64.sh",
+			"program": "${workspaceFolder}/Day1/u-boot/build/u-boot",
+			"cwd": "${workspaceFolder}/Day1/u-boot/build",
+			"externalConsole": false,
+			"stopAtEntry": false,
+			"miDebuggerServerAddress": "localhost:1234",
+			"preLaunchTask": "Run QEMU (wait for GDB)",
+			"setupCommands": [
+				{
+					"text": "set confirm off"
+				},
+				{
+					"text": "set breakpoint pending on"
+				}
+			]
+		}
+	]
+}

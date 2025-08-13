@@ -25,9 +25,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rsync \
     # helpful extras
     less vim tmux unzip ripgrep \
-    dfu-util efitools liblz4-tool libpython3-dev lzma lzma-alone \
-    && rm -rf /var/lib/apt/lists/*
+    dfu-util efitools liblz4-tool libpython3-dev lzma lzma-alone
 
+RUN apt-get update && apt-get install -y \
+	libncursesw5 \
+	gdb-multiarch \
+    && rm -rf /var/lib/apt/lists/*
 
 # Create a non-root user matching VS Code defaults
 ARG USERNAME=vscode
