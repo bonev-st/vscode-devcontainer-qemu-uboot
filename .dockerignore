@@ -1,0 +1,8 @@
+**/.git
+**/.vscode
+**/.DS_Store
+Day1/u-boot/
+qemu-*/
+gcc-linaro-aarch64/
+arm-gnu-toolchain-*.tar.xz
+dtc/

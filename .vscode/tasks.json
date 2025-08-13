@@ -1,0 +1,35 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Setup (toolchain + QEMU + DTC)",
+      "type": "shell",
+      "command": "bash scripts/setup.sh",
+      "problemMatcher": []
+    },
+    {
+      "label": "Build U-Boot (Sandbox, out-of-tree)",
+      "type": "shell",
+      "command": "bash scripts/build_uboot_sandbox.sh",
+      "problemMatcher": []
+    },
+    {
+      "label": "Build U-Boot (QEMU ARM64, out-of-tree)",
+      "type": "shell",
+      "command": "bash scripts/build_uboot_qemu_arm64.sh",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run QEMU (U-Boot)",
+      "type": "shell",
+      "command": "bash scripts/run_qemu_uboot.sh",
+      "problemMatcher": []
+    },
+	    {
+      "label": "Run U-Boot (Sandbox)",
+      "type": "shell",
+      "command": "bash scripts/run_sanbox_uboot.sh",
+      "problemMatcher": []    }
+
+  ]
+}

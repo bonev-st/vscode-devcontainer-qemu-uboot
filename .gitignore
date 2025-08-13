@@ -1,0 +1,6 @@
+Day1/u-boot/
+qemu-*
+gcc-linaro-aarch64
+arm-gnu-toolchain-*
+dtc/
+.DS_Store
